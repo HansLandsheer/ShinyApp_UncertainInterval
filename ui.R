@@ -15,9 +15,12 @@ ui <- fluidPage(
                  plotOutput("distPlot"),        
                  
                  fluidRow(
+                   p("The point of intersection is equal to the optimal threshold at which the sum of Sensitivity and Specificity (Se + Sp) is maximized,
+               and the sum of errors (FNR + FPR) is minimized. You manipulate the percentages of errors with the sliders."),
+                   
                    column(6,
                           sliderInput("FNR",
-                                      "Percentage of true patients with test scores below the intersection:",
+                                      "False Negative Rate: Percentage of true patients with test scores below the intersection (1 - Se):",
                                       min = 1,
                                       max = 50,
                                       value = 15,
@@ -29,7 +32,7 @@ ui <- fluidPage(
                    ), 
                    column(6,
                           sliderInput("FPR",
-                                      "Percentage of true non-patients with test scores above the intersection:",
+                                      "False Positive Rate: Percentage of true non-patients with test scores above the intersection (1 - Sp):",
                                       min = 1,
                                       max = 50,
                                       value = 15,

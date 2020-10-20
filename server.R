@@ -67,7 +67,7 @@ server <- function(input, output, session) {
     Se.opt = 1-pnorm(is, m1, sd1)
     Sp.opt = pnorm(is, m0, sd0)
     Se.MCI = (1-pnorm(v2, m1, sd1))/(pnorm(v1, m1, sd1)+ 1-pnorm(v2, m1, sd1))
-    Sp.MCI = (pnorm(v1, m0, sd0))/(pnorm(v1, 0, 1)+ 1-pnorm(v2, m0, sd0))
+    Sp.MCI = (pnorm(v1, m0, sd0))/(pnorm(v1, m0, sd0)+ 1-pnorm(v2, m0, sd0))
     
     legend('right', c(paste('Se.opt =', round(Se.opt,2)),
                       paste('Se.MCI =', round(Se.MCI,2))), text.col=c('red', 'red'))
