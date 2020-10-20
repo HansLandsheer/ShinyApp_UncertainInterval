@@ -1,0 +1,13 @@
+name: UncertainIntervalBinormal
+title: UncertainIntervalBinormal
+username:
+account: hanslandsheer
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2588549
+bundleId: 3408579
+url: https://hanslandsheer.shinyapps.io/UncertainIntervalBinormal/
+when: 1595144614.30995
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app.R
