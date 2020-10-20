@@ -15,7 +15,7 @@ ui <- fluidPage(
                  plotOutput("distPlot"),        
                  
                  fluidRow(
-                   p("The point of intersection is equal to the optimal threshold at which the sum of Sensitivity and Specificity (Se + Sp) is maximized,
+                   p("The point of intersection is equal to the optimal dichotomous threshold at which the sum of Sensitivity and Specificity (Se + Sp) is maximized,
                and the sum of errors (FNR + FPR) is minimized. You manipulate the percentages of errors with the sliders."),
                    
                    column(6,
