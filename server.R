@@ -5,12 +5,12 @@ library(UncertainInterval)
 server <- function(input, output, session) {
   
   output$distPlot <- renderPlot({
-    # generate pdf's based on input$bins from ui.R
+    # generate probability density functions based on input$bins from ui.R
     
-    if (input$combineSliders) updateSliderInput(session, "FPR", value = input$FNR)
+    if (input$combineSliders) updateSliderInput(session, "Sp", value = input$Se)
     
-    FPR = input$FPR / 100
-    FNR = input$FNR / 100
+    FPR = 1 - input$Sp 
+    FNR = 1 - input$Se
     acc = ifelse(input$acc==1, .55, .60)
     
     m0=0; sd0=1; 
@@ -75,6 +75,8 @@ server <- function(input, output, session) {
                      paste('Sp.MCI =', round(Sp.MCI,2))), text.col=c('black', 'black'))
   })
   
-  output$overlap = renderText(paste("Overlap Distributions =", input$FNR+input$FPR, '%'))
-  
+  output$overlap = renderText(paste("Overlap Distributions =", (1-input$Sp+ 1-input$Se)*100, '%'))
+  observeEvent(input$quit, {
+    stopApp()
+  })
 }
